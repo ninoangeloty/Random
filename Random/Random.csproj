@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoMapper.cs" />
-    <Compile Include="ModelExtensions.cs" />
+    <Compile Include="AutoMapper\AutoMapper.cs" />
+    <Compile Include="ModelExtensions\ModelExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RandomObjectGenerator.cs" />
+    <Compile Include="RandomObjectGenerator\RandomObjectGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

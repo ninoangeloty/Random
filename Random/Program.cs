@@ -17,7 +17,7 @@ namespace RandomJunk
             content += "\nProp[0]: " +  ModelExtensions.GetPropertyName<DumbModel>(_ => _.ID);
             content += "\nProp[1]: " + ModelExtensions.GetPropertyName<DumbModel>(_ => _.Name);
 
-            AutoMapperTest();
+            Program.AutoMapperTest();
 
             Console.WriteLine(content);
             Console.ReadKey();
@@ -29,9 +29,10 @@ namespace RandomJunk
             var two = new DumbModel();
             one.Map(two);
 
-            var listOne = new List<DumbModel> { one };
-            var listTwo = new List<DumbModel>();
-            listOne.Map(listTwo);
+            // Map to collection not yet implemented
+            //var listOne = new List<DumbModel> { one };
+            //var listTwo = new List<DumbModel>();
+            //listOne.Map(listTwo);
 
             // map to different type will do nothing
             var dumbOne = new DumbModel() { ID = 1, Name = "One" };
