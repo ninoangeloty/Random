@@ -23,11 +23,6 @@ namespace RandomJunk
 
         public static void Map(this object obj, object mapTo)
         {
-            if (obj.GetType() != mapTo.GetType())
-            {
-                return;
-            }
-
             //if (obj.GetType().IsGenericType)
             //{
             //    AutoMapper.MapCollection(obj, mapTo);
@@ -45,6 +40,11 @@ namespace RandomJunk
         /// <param name="mapTo"></param>
         public static void MapCollection(object source, object mapTo)
         {
+            //if (source.GetType() != mapTo.GetType())
+            //{
+            //    return;
+            //}
+
             var sourceProperties = source.GetType().GetProperties();
             
             if (sourceProperties != null)
@@ -56,21 +56,7 @@ namespace RandomJunk
                 if (count == 0)
                 {
                     return;
-                }
-
-                //foreach (var item in source.GetType().GetProperties())
-                //{
-                //    var prop = item.GetValue(source);
-                //    if (prop is IEnumerable)
-                //    {
-                //        var collection = (IEnumerable)prop;
-                //    }
-                //}
-
-                var collection = (IEnumerable)source;
-                foreach (var item in collection)
-                {
-                }
+                }                
             }
         }
 

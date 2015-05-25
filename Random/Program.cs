@@ -26,18 +26,12 @@ namespace RandomJunk
         static void AutoMapperTest()
         {
             var one = new DumbModel() { ID = 1, Name = "One" };
-            var two = new DumbModel();
+            var two = new DumbModelTwo();
             one.Map(two);
 
-            // Map to collection not yet implemented
-            //var listOne = new List<DumbModel> { one };
-            //var listTwo = new List<DumbModel>();
-            //listOne.Map(listTwo);
-
-            // map to different type will do nothing
-            var dumbOne = new DumbModel() { ID = 1, Name = "One" };
-            var dumbTwo = new SuperDumbModel();
-            dumbOne.Map(dumbTwo);
+            var listOne = new List<DumbModel> { one };
+            var listTwo = new List<DumbModel>();
+            listOne.Map(listTwo);
         }
     }
 
@@ -51,10 +45,6 @@ namespace RandomJunk
     {
         public int ID { get; set; }
         public string Name { get; set; }
-    }
-
-    public class SuperDumbModel
-    {
-        public int ID { get; set; }
+        public string Email { get; set; }
     }
 }
