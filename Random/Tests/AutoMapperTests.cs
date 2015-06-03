@@ -22,8 +22,8 @@ namespace RandomJunk.Tests
 
             modelOne.Map(modelTwo);
 
-            Assert.AreEqual(modelOne.ID, modelTwo.ID, ModelExtensions.GetPropertyName<DumbModelTwo>(_ => _.ID));
-            Assert.AreEqual(modelOne.Name, modelTwo.Name, ModelExtensions.GetPropertyName<DumbModelTwo>(_ => _.Name));
+            Assert.AreEqual(modelOne.ID, modelTwo.ID, modelTwo.GetPropertyName(_ => _.ID));
+            Assert.AreEqual(modelOne.Name, modelTwo.Name, modelTwo.GetPropertyName(_ => _.Name));
         }
 
         [TestMethod]
@@ -38,8 +38,8 @@ namespace RandomJunk.Tests
 
             modelOne.Map(modelTwo);
 
-            Assert.AreEqual(modelOne.ID, modelTwo.ID, ModelExtensions.GetPropertyName<DumbModelTwo>(_ => _.ID));
-            Assert.AreEqual(modelOne.Name, modelTwo.Name, ModelExtensions.GetPropertyName<DumbModelTwo>(_ => _.Name));
+            Assert.AreEqual(modelOne.ID, modelTwo.ID, modelTwo.GetPropertyName(_ => _.ID));
+            Assert.AreEqual(modelOne.Name, modelTwo.Name, modelTwo.GetPropertyName(_ => _.Name));
         }
     }
 }

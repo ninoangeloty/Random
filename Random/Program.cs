@@ -14,8 +14,9 @@ namespace RandomJunk
             var content = string.Format("Random #: {0}\nRandom Text: {1}\nRandom Guid: {2}", 
                 generator.Generate<double>(), generator.Generate<string>(), generator.Generate<Guid>());
 
-            content += "\nProp[0]: " +  ModelExtensions.GetPropertyName<DumbModel>(_ => _.ID);
-            content += "\nProp[1]: " + ModelExtensions.GetPropertyName<DumbModel>(_ => _.Name);
+
+            content += "\nProp[0]: " + new DumbModel().GetPropertyName(_ => _.ID);
+            content += "\nProp[1]: " + new DumbModel().GetPropertyName(_ => _.Name);
 
             Program.AutoMapperTest();
 

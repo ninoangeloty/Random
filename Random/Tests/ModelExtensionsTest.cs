@@ -13,11 +13,6 @@ namespace RandomJunk.Tests
         [TestMethod]
         public void GetPropertyName()
         {
-            var idProperty = ModelExtensions.GetPropertyName<DumbModel>(_ => _.ID);
-            var nameProperty = ModelExtensions.GetPropertyName<DumbModelTwo>(_ => _.Name);
-
-            Assert.AreEqual("ID", idProperty, ModelExtensions.GetPropertyName<DumbModel>(_ => _.ID));
-            Assert.AreEqual("Name", nameProperty, ModelExtensions.GetPropertyName<DumbModelTwo>(_ => _.Name));
         }
     }
 }
